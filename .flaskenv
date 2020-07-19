@@ -1,4 +1,4 @@
-FLASK_APP=get_csr
+FLASK_APP=wsgi
 FLASK_ENV=development
 FLASK_DEBUG=True
 FLASK_RUN_HOST=127.0.0.1
