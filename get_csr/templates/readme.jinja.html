@@ -1,0 +1,21 @@
+{% extends 'master.jinja.html' %}
+
+{% block content %}
+  <div class="row justify-content-center">
+    <div class="col-12 col-sm-10">
+  <h4 class="my-heading">{{ _('About') }}</h4>
+  <p class="my-text">{{ _('It is an open source web application built for simple CSR generation. You can find the source code at ') }} <a class="my-link" href="https://github.com/TitaniumHocker/get-csr">github.</a> {{ _('The application does not store any information on the server side, except for access logs and error logs of the webserver.') }}</p>
+    </div>
+    <div class="col-12 col-sm-10">
+  <h4 class="my-heading">{{ _('Security') }}</h4>
+  <p class="my-text">{{ _('Please note that the generation of such information as the CSR and the private key on a remote server and their transmission over the Internet has the potential to compromise the data. Even taking into account the fact that this application works on HTTPS.') }}</p>
+    </div>
+    <div class="col-12 col-sm-10">
+  <h4 class="my-heading">{{ _('Alternative') }}</h4>
+  <p class="my-text">{{ _('If you have increased security requirements, the best way would be to generate such data on the side of your server using OpenSSL. You can find instructions on how to do it on the Internet.
+  When developing this application, the following generation method was used:') }}
+  <a class="my-link" href="https://cryptography.io/en/latest/x509/tutorial/#creating-a-certificate-signing-request-csr">{{ _('Link') }}</a>
+  </p>
+    </div>
+  </div>
+{% endblock %}

@@ -1,8 +1,10 @@
 # -*- coding: utf-8 -*-
-
+from os import environ
 
 class BasicConfig:
     '''Basic configuration object'''
+    LANGUAGES = ['en', 'ru']
+    SECRET_KEY = environ.get('SECRET_KEY')
 
 
 class DevelopmentConfig(BasicConfig):
