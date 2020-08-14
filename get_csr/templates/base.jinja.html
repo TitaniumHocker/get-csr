@@ -1,0 +1,53 @@
+{% from 'bootstrap/utils.html' import render_static %}
+
+<!doctype html>
+<html lang="{{ get_locale() }}">
+  <head>
+    {% block head %}
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+      <meta name="description" content="">
+      <meta name="author" content="Ivan Fedorov">
+      {{ render_static('icon', 'img/favicon.svg') }}
+
+      <!-- Roboto from Google Fonts -->
+      <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;900&display=swap" rel="stylesheet">
+
+      <!-- Bootstrap core CSS -->
+      {{ bootstrap.load_css() }}
+
+      <!-- Custom styles for this project -->
+      {{ render_static('css', 'css/main.css') }}
+
+      <title>
+        {% if ptitle %}{{ ptitle }} - {% endif %}Get CSR
+      </title>
+
+    {% endblock %}
+  </head>
+  <body class="container mt-4">
+    <div class="row justify-content-center">
+      <div class="container col-12 col-md-8">
+        {% block navbar %}
+        {% endblock %}
+        <main role="main" class="container mt-4">
+          {% block msg %}
+          {% endblock %}
+          {% block content %}
+          {% endblock %}
+        </main>
+        {% block footer %}
+        {% endblock %}
+        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+        {{ bootstrap.load_js() }}
+        <!-- Custom Scripts -->
+        {% block scripts %}
+        {% endblock %}
+        {% if config['DEBUG'] == True %}
+          <!-- Autoreload for development -->
+          <script type="text/javascript" src="https://livejs.com/live.js"></script>
+        {% endif %}
+      </div>
+    </div>
+  </body>
+</html>

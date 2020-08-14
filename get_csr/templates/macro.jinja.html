@@ -1,0 +1,64 @@
+{% from 'bootstrap/form.html' import render_field %}
+
+{% macro render_hint(text) %}
+<small class="form-text text-muted my-text mx-1">{{ text }}</small>
+{% endmacro %}
+
+{% macro render_form_row(field) %}
+<div class="form-row">
+  <div class="form-group col-4">
+    {{ field.label(class='my-label') }}
+  </div>
+  <div class="form-group col-8">
+    {{ field(class='form-control my-input form-control-sm') }}
+    {% if field.errors %}
+      {% for error in field.errors %}
+        <span class="badge badge-danger">{{ error }}</span>
+      {% endfor %}
+    {% endif %}
+    {{ render_hint(field.description) }}
+  </div>
+</div>
+{% endmacro %}
+
+{% macro render_csr_form(form) %}
+<form action="{{ url_for('public.index') }}" method="POST">
+  {{ form.csrf_token() }}
+  {{ render_form_row(form.country) }}
+  {{ render_form_row(form.state) }}
+  {{ render_form_row(form.locality) }}
+  {{ render_form_row(form.organization) }}
+  {{ render_form_row(form.org_unit) }}
+  {{ render_form_row(form.common_name) }}
+  {{ render_form_row(form.alt_names) }}
+  <div class="form-row">
+    <div class="form-group col-4 mb-0">
+      {{ form.key_size.label(class='my-label') }}
+    </div>
+    <div class="form-group col-8 mb-0">
+      <div class="form-check form-check-inline">
+        {% for choice in form.key_size %}
+          <div class="custom-radio custom-control-inline">
+            {% if choice.data == form.key_size.default %}
+              {{ choice(class='form-check-input custom-control-input', checked=True) }}
+            {% else %}
+              {{ choice(class='form-check-input custom-control-input') }}
+            {% endif %}
+            {{ choice.label(class='form-check-label custom-control-label mr-1') }}
+          </div>
+        {% endfor %}
+        {% if form.key_size.errors %}
+          {% for error in form.key_size.errors %}
+            <span class="badge badge-danger">{{ error }}</span>
+          {% endfor %}
+        {% endif %}
+        {{ render_hint(form.key_size.description) }}
+      </div>
+    </div>
+  </div>
+  <div class="dropdown-divider"></div>
+  <div class="form-row justify-content-center">
+    {{ form.submit(class='btn btn-primary btn-block col-4 mt-2 my-btn') }}
+    <div>
+</form>
+{% endmacro %}

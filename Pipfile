@@ -19,6 +19,9 @@ cryptography = "*"
 flask-wtf = "*"
 flask-cors = "*"
 bootstrap-flask = "*"
+webargs = "*"
+gunicorn = "*"
+gevent = "*"
 
 [requires]
 python_version = "3.5"

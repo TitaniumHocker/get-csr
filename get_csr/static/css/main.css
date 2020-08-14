@@ -1,0 +1,107 @@
+body {
+    font-family: Roboto;
+    font-weight: 700;
+    height:100%;
+}
+
+.white {
+  color: #FFFFFF !important;
+}
+
+.bg-white {
+  background-color: #FFFFFF !important;
+}
+
+.my-brand {
+  color: #e76f51 !important;
+}
+
+.my-btn {
+  background-color: #e76f51 !important;
+  border-radius: 0px !important;
+  border-width: 0px !important;
+}
+
+.my-nav-link {
+    padding: 0.25rem 0;
+    border-bottom: .25rem solid;
+    border-bottom-color: #FFFFFF;
+    color: #F4A261 !important;
+    outline: none;
+}
+
+.my-nav-link:hover {
+  border-bottom-color: #F4A261 !important;
+}
+
+.my-active {
+  border-bottom-color: #F4A261 !important;
+}
+
+.my-heading {
+  color: #e76f51 !important;
+}
+
+.my-text {
+  color: #264653 !important;
+}
+
+.my-label {
+  color: #264653 !important;
+}
+
+.my-input {
+  border-width: 1px !important;
+  border-radius: 0px !important;
+  color: #264653 !important;
+}
+
+.my-input:focus {
+    box-shadow: none;
+    outline: none;
+    text-shadow: none;
+    border-color: #F4A261 !important;
+}
+
+.custom-control-input:checked {
+  background-color: #F4A261 !important;
+  border-color: #F4A261 !important;
+}
+
+.custom-radio .custom-control-input:focus ~ .custom-control-label::before {
+    box-shadow: none;
+}
+
+.custom-control-label::before {
+  background-color: #F4A261 !important;
+  border-color: #F4A261 !important;
+}
+
+.my-link {
+  color: #2A9D8F !important;
+}
+
+.example {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  background-color: #f9f9f9;
+  border: 1px solid #F4A261;
+  border-radius: 0px;
+}
+
+.success-data {
+  padding: 1rem;
+  background-color: #f9f9f9;
+  border: 1px solid #F4A261;
+  border-radius: 0px;
+}
+
+.data-nav-link {
+  color: #F4A261;
+  border-top-left-radius: 0px !important;
+  border-top-right-radius: 0px !important;
+}
+
+.data-nav-link:hover {
+  color: #e76f51;
+}

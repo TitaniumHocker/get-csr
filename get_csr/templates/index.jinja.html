@@ -1,0 +1,6 @@
+{% extends 'master.jinja.html' %}
+{% from 'macro.jinja.html' import render_csr_form %}
+
+{% block content %}
+  {{ render_csr_form(form) }}
+{% endblock %}
